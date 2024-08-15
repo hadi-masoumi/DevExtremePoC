@@ -3,27 +3,29 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent, ResetPasswordFormComponent, CreateAccountFormComponent, ChangePasswordFormComponent } from './shared/components';
 import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxFormModule, DxPopupModule, DxScrollViewModule, DxTemplateModule, DxTreeViewModule } from 'devextreme-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { UiComponentsComponent } from './pages/ui-components/ui-components.component';
+import { GridComponent } from './pages/grid/grid.component';
+import { DropDownBoxComponent } from './pages/drop-down-box/drop-down-box.component';
+import { PopupComponent } from './pages/popup/popup.component';
+import { TasksComponent } from './pages/tasks/tasks.component';
 
 const routes: Routes = [
   {
-    path: 'pages/ui-components',
-    component: UiComponentsComponent,
-    canActivate: [AuthGuardService]
+    path: 'pages/popup',
+    component: PopupComponent,
+  },
+  {
+    path: 'pages/dropdown-box',
+    component: DropDownBoxComponent,
+  },
+  {
+    path: 'pages/grid',
+    component: GridComponent,
   },
   {
     path: 'tasks',
     component: TasksComponent,
-    canActivate: [AuthGuardService]
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AuthGuardService]
   },
   {
     path: 'home',
@@ -64,7 +66,6 @@ const routes: Routes = [
     DxTreeViewModule,
     DxDropDownBoxModule,
     HttpClientModule,
-    DxDataGridModule,
     DxPopupModule,
     DxButtonModule,
     DxScrollViewModule,
@@ -74,9 +75,10 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [
     HomeComponent,
-    ProfileComponent,
-    TasksComponent,
-    UiComponentsComponent
+    GridComponent,
+    DropDownBoxComponent,
+    PopupComponent,
+    TasksComponent
   ]
 })
 export class AppRoutingModule { }

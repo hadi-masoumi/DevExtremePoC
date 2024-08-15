@@ -5,22 +5,22 @@ export const navigation = [
     icon: 'home'
   },
   {
-    text: 'Examples',
-    icon: 'folder',
+    text: 'UI Components',
+    icon: 'codeblock',
     items: [
       {
-        text: 'Profile',
-        path: '/profile'
+        text: 'Data Grid',
+        path: '/pages/grid'
+      },
+
+      {
+        text: 'Dropdown Box',
+        path: '/pages/dropdown-box'
       },
       {
-        text: 'Tasks',
-        path: '/tasks'
+        text: 'Popup',
+        path: '/pages/popup',
       }
     ]
   },
-  {
-    text: 'UI Components',
-    path: '/pages/ui-components',
-    icon: 'folder'
-  }
 ];

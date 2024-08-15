@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # Path to your Angular build output
+          path: dist2  # Path to your Angular build output
 
   # Deployment job
   deploy:

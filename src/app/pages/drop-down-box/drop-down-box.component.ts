@@ -5,11 +5,11 @@ import { DxButtonTypes } from 'devextreme-angular/ui/button';
 import { DxTreeViewTypes } from 'devextreme-angular/ui/tree-view';
 
 @Component({
-  selector: 'app-ui-components',
-  templateUrl: './ui-components.component.html',
-  styleUrls: ['./ui-components.component.css']
+  selector: 'app-drop-down-box',
+  templateUrl: './drop-down-box.component.html',
+  styleUrls: ['./drop-down-box.component.css']
 })
-export class UiComponentsComponent {
+export class DropDownBoxComponent {
   @ViewChild(DxTreeViewComponent, { static: false }) treeView: DxTreeViewComponent;
 
   treeDataSource: any;
@@ -308,3 +308,4 @@ export class UiComponentsComponent {
     this.popupWithScrollViewVisible = true;
   }
 }
+
