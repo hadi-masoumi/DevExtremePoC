@@ -37,12 +37,12 @@ jobs:
         run: npm install
 
       - name: Build Angular project
-        run: npm run build -- --base-href="/build/"
+        run: npm run build -- --base-href="/DevExtremePoC/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build  # Path to your Angular build output
+          path: dist/DevExtremePoC  # Path to your Angular build output
 
   # Deployment job
   deploy:
