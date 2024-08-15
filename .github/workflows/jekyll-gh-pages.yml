@@ -32,10 +32,13 @@ jobs:
       - name: Build Angular project
         run: npm run build -- --base-href="/DevExtremePoC/"
 
+      - name: Verify build output
+        run: ls -la dist/dev-extreme-po-c  # List files to verify the output directory
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/dev-extreme-po-c  # Updated to the correct build output path
+          path: dist/dev-extreme-po-c
 
   deploy:
     environment:
