@@ -1,0 +1,130 @@
+<h2 class="content-block">UI Components</h2>
+
+<div class="content-block dx-card responsive-paddings">
+  <div class="dx-fieldset">
+    <div class="dx-field">
+      <div class="dx-field-label">DropDownBox</div>
+      <div class="dx-field-value">
+        <dx-drop-down-box
+          [(value)]="treeBoxValue"
+          [inputAttr]="{ 'aria-label': 'Owner' }"
+          valueExpr="ID"
+          displayExpr="name"
+          placeholder="Select a value..."
+          [showClearButton]="true"
+          [dataSource]="options"
+          (onValueChanged)="onDropDownBoxValueChanged()"
+        >
+            <dx-tree-view
+              [dataSource]="options"
+              dataStructure="plain"
+              keyExpr="ID"
+              displayExpr="name"
+              parentIdExpr="categoryId"
+              selectionMode="multiple"
+              showCheckBoxesMode="normal"
+              [selectNodesRecursive]="false"
+              [selectByClick]="true"
+              (onContentReady)="onTreeViewReady($event)"
+              (onItemSelectionChanged)="onTreeViewSelectionChanged($event)"
+            >
+            </dx-tree-view>
+        </dx-drop-down-box>
+      </div>
+    </div>
+    <div class="dx-field">
+      <div class="dx-field-label">DropDownBox with Select All</div>
+      <div class="dx-field-value">
+        <dx-drop-down-box
+          [(value)]="treeBoxValue"
+          [inputAttr]="{ 'aria-label': 'Owner' }"
+          valueExpr="ID"
+          displayExpr="name"
+          placeholder="Select a value..."
+          [showClearButton]="true"
+          [dataSource]="options"
+          (onValueChanged)="onDropDownBoxValueChanged()"
+        >
+            <dx-tree-view
+              [dataSource]="options"
+              dataStructure="plain"
+              keyExpr="ID"
+              displayExpr="name"
+              parentIdExpr="categoryId"
+              selectionMode="multiple"
+              showCheckBoxesMode="selectAll"
+              [selectNodesRecursive]="false"
+              [selectByClick]="true"
+              (onContentReady)="onTreeViewReady($event)"
+              (onItemSelectionChanged)="onTreeViewSelectionChanged($event)"
+            >
+            </dx-tree-view>
+        </dx-drop-down-box>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-block dx-card responsive-paddings">
+  <div class="dx-fieldset">
+    <div class="dx-field">
+      <div class="dx-field-label">Simple Popup</div>
+
+      <dx-button
+          text="Show Popup"
+          type="default"
+          [width]="300"
+          (onClick)="showPopup()"
+      >
+</dx-button>
+      <dx-popup
+        [width]="360"
+        [height]="320"
+        [hideOnOutsideClick]="true"
+        [showCloseButton]="true"
+        [(visible)]="popupVisible"
+        title="Downtown Inn"
+        position="left bottom"
+>
+
+
+
+  <div *dxTemplate="let data of 'content'">
+    <div>
+      <div class="caption">Description</div>
+      In the heart of LA's business district, the Downtown Inn has a welcoming
+      staff and award winning restaurants that remain open 24 hours a day. Use
+      our conference room facilities to conduct meetings and have a drink at our
+      beautiful rooftop bar.
+      <br /><br />
+      <div class="content">
+        <div>
+          <div class="caption">Features</div>
+          <div>Concierge</div>
+          <div>Restaurant</div>
+          <div>Valet Parking</div>
+          <div>Fitness Center</div>
+          <div>Sauna</div>
+          <div>Airport Shuttle</div>
+        </div>
+        <div>
+          <div class="caption">Rooms</div>
+          <div>Climate control</div>
+          <div>Air conditioning</div>
+          <div>Coffee/tea maker</div>
+          <div>Iron/ironing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <dxi-toolbar-item
+    widget="dxButton"
+    toolbar="bottom"
+    location="center"
+    [options]="bookButtonOptions"
+  >
+  </dxi-toolbar-item>
+</dx-popup>
+    </div>
+  </div>
+</div>
