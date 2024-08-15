@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -35,14 +35,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      
+
       - name: Build Angular project
         run: npm run build -- --base-href="/DevExtremePoC/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/DevExtremePoC  # Path to your Angular build output
+          path: dist  # Path to your Angular build output
 
   # Deployment job
   deploy:
